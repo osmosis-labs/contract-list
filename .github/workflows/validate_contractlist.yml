@@ -2,10 +2,7 @@ on:
   pull_request:
     branches:
       - main
-  push:
-    branches:
-      - main
-name: Pull request workflow
+name: workflow
 jobs:
   validate_contractlists:
     name: Validate contractlists
