@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-name: Pull request workflow
+name: workflow
 jobs:
   validate_contractlists:
     name: Validate contractlists
