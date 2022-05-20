@@ -1,0 +1,74 @@
+{
+    "$id": "https://osmosis.zone/assetlists.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Contract Lists",
+    "description": "Contract lists are a mechanism to allow frontends and other UIs to fetch metadata associated with Cosmwasm contracts.",
+    "type": "object",
+    "required": [
+        "chain_id",
+        "contracts"
+    ],
+    "properties": {
+        "chain_id": {
+            "type": "string"
+        },
+        "contracts": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/contract"
+            }
+        }
+    },
+    "$defs": {
+        "contract": {
+            "type": "object",
+            "required": [
+                "code_id",
+                "code_display_name",
+                "code_source_code",
+                "instantiations"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "[OPTIONAL] A short description of the code"
+                },
+                "code_id": {
+                    "type": "Integer",
+                    "description": "The on-chain code-id"
+                },
+                "code_display_name": {
+                    "type": "string",
+                    "description": "The human readable name for this contract"
+                },
+                "code_source_code": {
+                    "type": "string",
+                    "description": "Link to the source code for this contract. TBD if this gets replaced with crates.io link"
+                },
+                "instantations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/denom_unit"
+                    }
+                }
+            }
+        },
+        "contract_instantiation": {
+            "type": "object",
+            "properties": {
+                "instantiation_address": {
+                    "type": "string",
+                    "description": "on-chain address for this contract"
+                },
+                "instantiation_name": {
+                    "type": "string",
+                    "description": "human readable name for this contract instantion"
+                }
+            },
+            "required": [
+                "instantiation_address",
+                "instantiation_name"
+            ]
+        }
+    }
+}
