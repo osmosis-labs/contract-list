@@ -6,7 +6,7 @@
         "display_name": "Token Holder DAO",
         "description": "Native SDK coin variant of DAO-DAO, v1",
         "code_source_code": "TODO",
-        "instantions": [
+        "instantations": [
           {
             "instantiation_address": "TBD",
             "instantiation_name": "ION DAO"
